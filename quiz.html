@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<title>OOP Student Quiz</title>
+
+<link
+    rel="stylesheet"
+    href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="nav-container">
+
+<div class="logo">
+Java OOP Course
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="modules.html">
+Modules
+</a>
+
+<a href="quiz.html">
+Quiz
+</a>
+
+<a href="assignments.html">
+Assignments
+</a>
+
+<a href="programs.html">
+Programs
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Student Quiz Portal
+</h1>
+
+<p>
+Enter your details and attempt the OOP quiz.
+</p>
+
+</div>
+
+</section>
+
+
+<main class="container">
+
+
+<div class="content-card">
+
+<h2>Student Details</h2>
+
+<div class="form-grid">
+
+<div>
+
+<label>
+Student Name
+</label>
+
+<input
+    type="text"
+    id="studentName"
+    placeholder="Enter Student Name">
+
+</div>
+
+
+<div>
+
+<label>
+SRN
+</label>
+
+<input
+    type="text"
+    id="studentSRN"
+    placeholder="Enter SRN">
+
+</div>
+
+
+<div>
+
+<label>
+Section
+</label>
+
+<select id="studentSection">
+
+<option value="">
+Select Section
+</option>
+
+<option value="3CSE28">
+3CSE28
+</option>
+
+<option value="3CSE29">
+3CSE29
+</option>
+
+<option value="3CSE30">
+3CSE30
+</option>
+
+<option value="3CSE31">
+3CSE31
+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label>
+Select Quiz
+</label>
+
+<select id="moduleSelect">
+
+<option value="all">
+All Modules – 50 Questions
+</option>
+
+<option value="1">
+Module I
+</option>
+
+<option value="2">
+Module II
+</option>
+
+<option value="3">
+Module III
+</option>
+
+<option value="4">
+Module IV
+</option>
+
+<option value="5">
+Module V
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+<p id="quizCount"></p>
+
+</div>
+
+
+<div id="quizContainer"></div>
+
+
+<button
+    class="btn"
+    id="submitQuiz">
+
+Submit Quiz
+
+</button>
+
+
+<div id="result"></div>
+
+
+</main>
+
+
+<footer>
+Java OOP Course
+</footer>
+
+
+<script src="js/data.js"></script>
+<script src="js/quiz.js"></script>
+
+</body>
+
+</html>

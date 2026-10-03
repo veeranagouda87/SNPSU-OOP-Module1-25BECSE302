@@ -1,103 +1,101 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OOP (25BECSE302) – Module 1</title><link rel="stylesheet" href="style.css"></head>
-<body><div id="progress"></div>
-<header><h1>Module 1: Introduction to Java and OOP Concepts</h1><p>25BECSE302 · Object Oriented Programming · 6 hours</p><nav class="mods"><a href="../module1/index.html" class="cur">Module 1</a><a href="../module2/index.html">Module 2</a><a href="../module3/index.html">Module 3</a><a href="../module4/index.html">Module 4</a><a href="../module5/index.html">Module 5</a></nav></header>
-<main>
-<section id="features"><h2>1. Features of Java</h2>
-<p>Java (Sun Microsystems, 1995; now Oracle; James Gosling is the “father of Java”) was first named <b>Oak</b>. Its key promise: <b>Write Once, Run Anywhere (WORA)</b>.</p>
-<div class="tabs"><div class="tabbar"><button>Simple</button><button>Object-oriented</button><button>Platform independent</button><button>Robust</button><button>Secure</button><button>Multithreaded</button><button>Performance</button></div>
-<div class="panel">Syntax is based on C/C++, but pointers and operator overloading were removed.</div>
-<div class="panel">Everything is modelled with classes and objects. Primitives (int, etc.) stay non-objects for speed.</div>
-<div class="panel">The compiler emits architecture-neutral <b>bytecode</b>; any machine with a JVM can run it (architecture neutral, portable, interpreted).</div>
-<div class="panel">Strong compile-time type checking, automatic <b>garbage collection</b>, and object-oriented exception handling.</div>
-<div class="panel">No explicit pointers, and programs run inside the JVM sandbox.</div>
-<div class="panel">One program can do many tasks at once by sharing the same memory between threads.</div>
-<div class="panel">The <b>JIT compiler</b> translates hot bytecode into native machine code. Also: distributed (TCP/IP support) and dynamic (run-time type information).</div></div></section>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java OOP Course</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-<section id="jvm"><h2>2. JVM, JDK, JRE and the Compile–Run Cycle</h2>
-<table><tr><th>Term</th><th>Meaning</th></tr><tr><td>JVM</td><td>Virtual machine that executes bytecode</td></tr><tr><td>JRE</td><td>JVM + core libraries (needed to <i>run</i>)</td></tr><tr><td>JDK</td><td>JRE + compiler (<code>javac</code>) and tools (needed to <i>develop</i>)</td></tr></table>
-<div class="stepper"><button class="btn next">Next step ▶</button> <button class="btn alt reset">Reset</button>
-<div class="step">1. Write source code in <code>Example.java</code> (file name = public class name)</div>
-<div class="step">2. Compile: <code>javac Example.java</code></div>
-<div class="step">3. Compiler produces bytecode: <code>Example.class</code></div>
-<div class="step">4. Run: <code>java Example</code> – the JVM loads and verifies the bytecode</div>
-<div class="step">5. Interpreter/JIT executes it on your OS and hardware</div></div>
-<div class="codebox" data-title="Example.java" data-cmd="javac Example.java &amp;&amp; java Example" data-output="Welcome to Programming in Java" data-explain="public – JVM can call it from anywhere\nstatic – no object needed to start the program\nvoid – returns nothing\nmain – entry point\nString args[] – command-line arguments\nSystem.out.println – System (class) . out (PrintStream object) . println (method), then newline\n; ends the statement"><pre>
-class Example {
-    public static void main(String args[]) {
-        System.out.println("Welcome to Programming in Java");
-    }
-}</pre></div></section>
+<body>
 
-<section id="types"><h2>3. Data Types, Operators and Control Structures</h2>
-<table><tr><th>Primitive</th><th>Size</th><th>Range / note</th></tr><tr><td>byte</td><td>8 bit</td><td>-128 to 127</td></tr><tr><td>short</td><td>16 bit</td><td>-32,768 to 32,767</td></tr><tr><td>int</td><td>32 bit</td><td>about ±2.1 billion</td></tr><tr><td>long</td><td>64 bit</td><td>very large integers (suffix L)</td></tr><tr><td>float / double</td><td>32 / 64 bit</td><td>decimals</td></tr><tr><td>char</td><td>16 bit</td><td>Unicode; behaves like an integer</td></tr><tr><td>boolean</td><td>–</td><td>true / false</td></tr></table>
-<p><b>Non-primitive</b> types are reference types: String, arrays, classes, interfaces.</p>
-<div class="codebox" data-title="Overflow.java" data-output="-128\n(byte)257 = 1" data-explain="byte b = 127; b++ wraps around to -128.\nA cast (byte)257 keeps only the low 8 bits, giving 1."><pre>
-public class Main {
-    public static void main(String[] args) {
-        byte b = 127;
-        b++;                         // wraps around
-        System.out.println(b);
-        int i = 257;
-        System.out.println("(byte)257 = " + (byte) i);
-    }
-}</pre></div>
-<div class="note"><b>Conversion:</b> widening (int→long→float) is automatic; narrowing needs a cast <code>(target-type) value</code>. There is no automatic conversion to char or boolean.</div>
-<h3>Operators</h3><p>Arithmetic <code>+ - * / %</code>, relational <code>&lt; &gt; == !=</code>, logical <code>&amp;&amp; || !</code>, assignment <code>= += -=</code>, unary <code>++ --</code>, ternary <code>?:</code>, bitwise <code>&amp; | ^ ~ &lt;&lt; &gt;&gt;</code>.</p>
-<div class="tabs"><div class="tabbar"><button>if-else</button><button>switch</button><button>for</button><button>while</button><button>do-while</button></div>
-<div class="panel"><div class="codebox" data-output="Pass"><pre>
-int marks = 72;
-if (marks &gt;= 40) System.out.println("Pass");
-else System.out.println("Fail");</pre></div></div>
-<div class="panel"><div class="codebox" data-output="Tuesday"><pre>
-int d = 2;
-switch (d) {
-    case 1: System.out.println("Monday"); break;
-    case 2: System.out.println("Tuesday"); break;
-    default: System.out.println("Other");
-}</pre></div></div>
-<div class="panel"><div class="codebox" data-output="1 2 3 4 5"><pre>
-for (int i = 1; i &lt;= 5; i++) System.out.print(i + " ");</pre></div></div>
-<div class="panel"><div class="codebox" data-output="3 2 1"><pre>
-int n = 3;
-while (n &gt; 0) { System.out.print(n + " "); n--; }</pre></div></div>
-<div class="panel"><p>Do-while checks the condition <b>after</b> the body, so it always runs at least once.</p><div class="codebox" data-output="Runs once"><pre>
-int x = 10;
-do { System.out.println("Runs once"); } while (x &lt; 5);</pre></div></div></div></section>
+<header>
+    <div class="nav-container">
+        <div class="logo">Java OOP Course</div>
 
-<section id="oop"><h2>4. Introduction to OOP</h2>
-<p><b>POP</b> (C): functions and data are separate, top-down design. <b>OOP</b> (Java): data and methods are bundled in objects.</p>
-<div class="tabs"><div class="tabbar"><button>Encapsulation</button><button>Inheritance</button><button>Polymorphism</button><button>Abstraction</button></div>
-<div class="panel">Binds code and data together and protects them from outside misuse. The class is the unit of encapsulation (instance variables + methods).</div>
-<div class="panel">One class acquires the properties of another (child inherits from parent), supporting hierarchical classification and reuse.</div>
-<div class="panel">“One interface, many forms”: the same method name behaves differently depending on the object or arguments.</div>
-<div class="panel">Show only essential features, hide the details – like a TV remote hides the electronics.</div></div>
-<h3>Class, object, constructors, static, this</h3>
-<div class="codebox" data-title="Student.java" data-output="Asha 21\nStudents created: 2" data-explain="A class is the blueprint; new creates an object.\nstatic count belongs to the class, shared by all objects.\nname/age are instance (non-static) members – each object has its own.\nthis.name refers to the current object and removes the clash with the parameter name.\nThe no-arg constructor gives defaults, the parameterized one sets values, and this(...) chains constructors."><pre>
-class Student {
-    String name; int age;
-    static int count = 0;
-    Student() { this("Unknown", 0); }            // default, chains
-    Student(String name, int age) {              // parameterized
-        this.name = name; this.age = age; count++;
-    }
-    Student(Student s) { this(s.name, s.age); }  // copy
-    void show() { System.out.println(name + " " + age); }
-    public static void main(String[] a) {
-        Student s1 = new Student("Asha", 21);
-        Student s2 = new Student();
-        s1.show();
-        System.out.println("Students created: " + Student.count);
-    }
-}</pre></div>
-<table><tr><th>Static</th><th>Non-static</th></tr><tr><td>Belongs to the class; one copy</td><td>Belongs to each object</td></tr><tr><td>Called via ClassName.member</td><td>Called via object reference</td></tr><tr><td>Cannot use this or instance members directly</td><td>Can use both static and instance members</td></tr></table>
-<div class="note lab"><b>Lab link:</b> Program 1b – ATM machine with deposit, withdrawal and balance check (classes, objects, control structures).</div></section>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="modules.html">Modules</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="assignments.html">Assignments</a>
+            <a href="programs.html">Programs</a>
+        </nav>
+    </div>
+</header>
 
-<section id="quiz" class="quiz"><h2>Check yourself</h2>
-<div class="q" data-answer="1"><p>Which tool compiles Java source to bytecode?</p><ul><li>java</li><li>javac</li><li>JRE</li></ul><div class="fb" data-t="javac (part of the JDK) produces the .class file."></div></div>
-<div class="q" data-answer="2"><p>What does <code>byte b=127; b++;</code> give?</p><ul><li>128</li><li>Compile error</li><li>-128</li></ul><div class="fb" data-t="byte overflows and wraps around."></div></div>
-<div class="q" data-answer="0"><p>Which is true of a static method?</p><ul><li>It can be called without creating an object</li><li>It can use this</li><li>It needs an object</li></ul><div class="fb" data-t="Static members belong to the class."></div></div>
-<div class="q" data-answer="1"><p>Which statement runs the body at least once?</p><ul><li>for</li><li>do-while</li><li>while</li></ul><div class="fb" data-t="do-while tests after the body."></div></div>
-<p class="score">Score: 0/4</p></section>
-</main><footer>Sapthagiri NPS University · CSE-AIML · OOP Module 1</footer><script src="script.js"></script></body></html>
+<section class="hero">
+    <div class="hero-content">
+
+        <span class="badge">B.E. CSE • III Semester</span>
+
+        <h1>
+            Object Oriented Programming
+            <br>
+            with Java
+        </h1>
+
+        <p>
+            Interactive learning portal for Java and Object Oriented
+            Programming concepts.
+        </p>
+
+        <a href="modules.html" class="btn">Explore Modules</a>
+
+        <a href="quiz.html" class="btn secondary">
+            Take Quiz
+        </a>
+
+    </div>
+</section>
+
+<main class="container">
+
+    <h2>Course Information</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Course Code</h3>
+            <p>25BECSE302</p>
+        </div>
+
+        <div class="card">
+            <h3>L-T-P</h3>
+            <p>2-0-2</p>
+        </div>
+
+        <div class="card">
+            <h3>Credits</h3>
+            <p>3</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Hours</h3>
+            <p>45 Hours</p>
+        </div>
+
+    </div>
+
+    <h2>Course Outcomes</h2>
+
+    <div class="content-card">
+
+        <ul id="coList"></ul>
+
+    </div>
+
+    <h2>Course Modules</h2>
+
+    <div id="moduleCards" class="cards"></div>
+
+</main>
+
+<footer>
+    Java OOP Course | B.E. CSE | Semester III
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+
+</body>
+</html>
