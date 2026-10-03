@@ -1,0 +1,461 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f4f7fb;
+
+    color: #172033;
+
+    line-height: 1.6;
+}
+
+
+/* HEADER */
+
+header {
+
+    background: #103f63;
+
+    color: white;
+
+    padding: 16px 5%;
+}
+
+
+.nav-container {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+}
+
+
+.logo {
+
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+
+nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    margin: 0 8px;
+
+    font-weight: 600;
+
+}
+
+
+nav a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* HERO */
+
+.hero {
+
+    background:
+        linear-gradient(
+            135deg,
+            #103f63,
+            #1976b8
+        );
+
+    color: white;
+
+    padding: 65px 5%;
+
+}
+
+
+.hero-content {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+}
+
+
+.hero h1 {
+
+    font-size: 42px;
+
+    margin: 10px 0;
+
+}
+
+
+.hero p {
+
+    font-size: 18px;
+
+    max-width: 850px;
+
+}
+
+
+/* CONTAINER */
+
+.container {
+
+    max-width: 1200px;
+
+    margin: 35px auto;
+
+    padding: 0 20px;
+
+}
+
+
+/* CARDS */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(270px,1fr)
+        );
+
+    gap: 20px;
+
+}
+
+
+.card,
+.module-card,
+.content-card,
+.question-card,
+.result-box {
+
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 24px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(16,63,99,0.08);
+
+    margin-bottom: 20px;
+
+}
+
+
+/* MODULE CARD */
+
+.module-card {
+
+    transition:
+        transform 0.2s;
+
+}
+
+
+.module-card:hover {
+
+    transform:
+        translateY(-5px);
+
+}
+
+
+/* BADGE */
+
+.badge {
+
+    display: inline-block;
+
+    background: #e7f2fb;
+
+    color: #103f63;
+
+    border-radius: 20px;
+
+    padding: 5px 11px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+}
+
+
+/* BUTTON */
+
+.btn {
+
+    display: inline-block;
+
+    background: #1976b8;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 10px 17px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin:
+        5px
+        5px
+        5px
+        0;
+
+}
+
+
+.btn:hover {
+
+    opacity: 0.9;
+
+}
+
+
+.secondary {
+
+    background: #e7f2fb;
+
+    color: #103f63;
+
+}
+
+
+/* FORMS */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(220px,1fr)
+        );
+
+    gap: 18px;
+
+}
+
+
+label {
+
+    font-weight: bold;
+
+}
+
+
+input,
+select {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-top: 6px;
+
+    border:
+        1px solid
+        #cbd5e1;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+}
+
+
+/* QUIZ */
+
+.question-card h3 {
+
+    margin-top: 0;
+
+}
+
+
+.option {
+
+    display: block;
+
+    border:
+        1px solid
+        #e2e8f0;
+
+    padding: 11px;
+
+    margin: 8px 0;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+
+.option:hover {
+
+    background: #f2f8fc;
+
+}
+
+
+/* RESULT */
+
+.result-box {
+
+    border-left:
+        6px solid
+        #1976b8;
+
+}
+
+
+.score {
+
+    font-size: 48px;
+
+    font-weight: bold;
+
+    color: #1976b8;
+
+}
+
+
+/* PROGRAM CODE */
+
+pre {
+
+    background: #111827;
+
+    color: #e5e7eb;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    overflow-x: auto;
+
+}
+
+
+code {
+
+    font-family:
+        "Courier New",
+        monospace;
+
+}
+
+
+/* FOOTER */
+
+footer {
+
+    background: #103f63;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 50px;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px) {
+
+    .hero h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    nav {
+
+        width: 100%;
+
+        margin-top: 10px;
+
+    }
+
+
+    nav a {
+
+        display: inline-block;
+
+        margin: 4px;
+
+    }
+
+}
+
+
+/* PRINT RESULT */
+
+@media print {
+
+    header,
+    footer,
+    .hero,
+    .question-card,
+    .form-card {
+
+        display: none !important;
+
+    }
+
+
+    .result-box {
+
+        box-shadow: none;
+
+        border:
+            1px solid #333;
+
+    }
+
+}
